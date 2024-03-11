@@ -6,11 +6,11 @@ source AS (
 
 renamed AS (
 	SELECT
-		id AS payment_id,
-		order_id,
-		amount_total,
-		payment_method,
-		payment_status
+		ID AS payment_id,
+		ORDER_ID AS order_id,
+		AMOUNT_TOTAL AS amount_total,
+		PAYMENT_METHOD AS payment_method,
+		PAYMENT_STATUS AS payment_status
 	FROM source
 )
 

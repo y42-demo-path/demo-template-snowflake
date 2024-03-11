@@ -5,7 +5,38 @@ models:
     meta:
       experts:
         users:
-          - rob.dewit@y42.com
+          - mail-product-support@y42.com
+        teams: []
+      asset_status: verified
+      tier: tier 1
     config:
       y42:
         apiVersion: v1
+    columns:
+      - name: ORDER_ID
+        data_type: TEXT
+        description: Unique ID for the order
+      - name: CUSTOMER_ID
+        data_type: TEXT
+        description: Unique ID for the customer; primary key in the customers table
+      - name: FULFILLMENT_METHOD
+        data_type: TEXT
+        description: How the order was fulfilled; either SELF_SERVICE or SERVICED by an
+          employee
+      - name: LINE_ITEMS
+        data_type: TEXT
+        description: "JSON list of items in the order. Contains product name, category,
+          and price"
+      - name: SERVICE_STATION
+        data_type: TEXT
+        description: Planet name of the service station where the order was placed
+      - name: ORDER_RECEIVED
+        data_type: TIMESTAMP_NTZ
+        description: Datetime when the order was received by the order service in CET.
+          Publication happens at 10 minute intervals.
+      - name: ORDER_STATUS
+        data_type: TEXT
+        description: "Status of the order: CANCELLED by customer, DECLINED by shop, or
+          ACCEPTED"
+    description: Staging model that renames, reorders, and processes columns of the
+      orders table.

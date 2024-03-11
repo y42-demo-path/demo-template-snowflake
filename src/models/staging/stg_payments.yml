@@ -5,18 +5,29 @@ models:
     meta:
       experts:
         users:
-          - rob.dewit@y42.com
+          - mail-product-support@y42.com
+        teams: []
+      asset_status: verified
+      tier: tier 1
     config:
       y42:
         apiVersion: v1
     columns:
       - name: PAYMENT_ID
         data_type: TEXT
+        description: Unique ID for the payment. There should be only one payment per order.
       - name: ORDER_ID
         data_type: TEXT
+        description: Unique ID for the customer; primary key in the customers table
       - name: AMOUNT_TOTAL
         data_type: NUMBER
+        description: The total order amount in euro cents
       - name: PAYMENT_METHOD
         data_type: TEXT
+        description: The method used to make the payment
       - name: PAYMENT_STATUS
         data_type: TEXT
+        description: Whether or not the payment came through properly; can be ACCEPTED,
+          DECLINED, or CANCELLED
+    description: Staging model that renames, reorders, and processes columns of the
+      payments table.

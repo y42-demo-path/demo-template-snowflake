@@ -5,7 +5,37 @@ models:
     meta:
       experts:
         users:
-          - rob.dewit@y42.com
+          - mail-product-support@y42.com
+        teams: []
+      asset_status: draft
+      tier: tier 2
     config:
       y42:
         apiVersion: v1
+    columns:
+      - name: ORDER_DATE
+        data_type: DATE
+      - name: ORDER_RECEIVED
+        data_type: TIMESTAMP_NTZ
+      - name: ORDER_ID
+        data_type: TEXT
+      - name: AMOUNT_TOTAL
+        data_type: NUMBER
+      - name: FULFILLMENT_METHOD
+        data_type: TEXT
+      - name: SERVICE_STATION
+        data_type: TEXT
+      - name: PAYMENT_ID
+        data_type: TEXT
+      - name: PAYMENT_METHOD
+        data_type: TEXT
+      - name: CUSTOMER_ID
+        data_type: TEXT
+      - name: FIRST_NAME
+        data_type: TEXT
+      - name: LAST_NAME
+        data_type: TEXT
+      - name: LINE_ITEMS
+        data_type: TEXT
+    description: Table that shows all orders that have been completed. This means
+      that both \`order_status\` and \`payment_status\` are \`ACCEPTED\`.

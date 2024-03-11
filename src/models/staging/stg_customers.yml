@@ -5,7 +5,22 @@ models:
     meta:
       experts:
         users:
-          - rob.dewit@y42.com
+          - mail-product-support@y42.com
+        teams: []
+      asset_status: verified
+      tier: tier 1
     config:
       y42:
         apiVersion: v1
+    columns:
+      - name: CUSTOMER_ID
+        data_type: TEXT
+        description: Unique ID for the customer
+      - name: FIRST_NAME
+        data_type: TEXT
+        description: First name of the customer
+      - name: LAST_NAME
+        data_type: TEXT
+        description: Last name of the customer
+    description: Staging model that renames, reorders, and processes columns of the
+      customers table.

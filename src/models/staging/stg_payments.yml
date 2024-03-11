@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_payments
+    meta:
+      experts:
+        users:
+          - rob.dewit@y42.com
+    config:
+      y42:
+        apiVersion: v1

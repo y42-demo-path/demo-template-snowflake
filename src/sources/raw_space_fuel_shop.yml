@@ -11,7 +11,10 @@ sources:
     meta:
       experts:
         users:
-          - rob.dewit@y42.com
+          - mail-product-support@y42.com
+        teams: []
+      asset_status: verified
+      tier: tier 1
     tables:
       - name: public_payments
         config:
@@ -33,16 +36,56 @@ sources:
         columns:
           - name: ID
             data_type: TEXT
+            description: Unique ID for the payment. There should be only one payment per
+              order.
+            tests:
+              - not_null
+              - unique
           - name: _Y42_EXTRACTED_AT
             data_type: TIMESTAMP_NTZ
           - name: ORDER_ID
             data_type: TEXT
+            description: Unique ID for the order; primary key in the orders table
+            tests:
+              - not_null
+              - unique
           - name: PAYMENT_STATUS
             data_type: TEXT
+            description: Whether or not the payment came through properly; can be ACCEPTED,
+              DECLINED, or CANCELLED
+            tests:
+              - not_null
+              - accepted_values:
+                  values:
+                    - ACCEPTED
+                    - DECLINED
+                    - CANCELLED
           - name: AMOUNT_TOTAL
             data_type: NUMBER
+            description: The total order amount in euro cents
+            tests:
+              - not_null
           - name: PAYMENT_METHOD
             data_type: TEXT
+            description: The method used to make the payment
+            tests:
+              - not_null
+              - accepted_values:
+                  values:
+                    - CREDIT_CARD
+                    - DEBIT_CARD
+                    - CASH
+                    - GIFT_VOUCHER
+                    - REWARD_POINTS
+        meta:
+          asset_status: verified
+          tier: tier 1
+          experts:
+            users:
+              - mail-product-support@y42.com
+            teams: []
+        description: Table that records payments for every order placed at the Space
+          Fuel Shop. There should be one payment per order.
       - name: public_orders
         config:
           y42_table:
@@ -65,20 +108,56 @@ sources:
         columns:
           - name: FULFILLMENT_METHOD
             data_type: TEXT
+            description: How the order was fulfilled; either SELF_SERVICE or SERVICED by an
+              employee
+            tests:
+              - not_null
+              - accepted_values:
+                  values:
+                    - SELF_SERVICE
+                    - SERVICED
           - name: UPDATED_AT
             data_type: TIMESTAMP_NTZ
+            description: Time at which the order was published to the database in CET
           - name: CUSTOMER_ID
             data_type: TEXT
+            description: Unique ID for the customer; primary key in the customers table
+            tests:
+              - not_null
           - name: SERVICE_STATION
             data_type: TEXT
+            description: Planet name of the service station where the order was placed
           - name: STATUS
             data_type: TEXT
+            description: Status of the order. 0 for cancelled, 1 for declined, 2 for
+              accepted
+            tests:
+              - not_null
+              - accepted_values:
+                  values:
+                    - "0"
+                    - "1"
+                    - "2"
           - name: _Y42_EXTRACTED_AT
             data_type: TIMESTAMP_NTZ
           - name: ID
             data_type: TEXT
+            description: Unique ID for the order
+            tests:
+              - not_null
+              - unique
           - name: LINE_ITEMS
             data_type: TEXT
+            description: JSON list of items in the order. Contains product name, category,
+              and price
+        description: Table that records orders placed at the Space Fuel Shop.
+        meta:
+          asset_status: verified
+          tier: tier 1
+          experts:
+            users:
+              - mail-product-support@y42.com
+            teams: []
       - name: public_customers
         config:
           y42_table:
@@ -97,9 +176,26 @@ sources:
         columns:
           - name: LAST_NAME
             data_type: TEXT
+            tests:
+              - not_null
+            description: Last name of the customer
           - name: ID
             data_type: TEXT
+            tests:
+              - unique
+              - not_null
+            description: Unique ID for the customer
           - name: _Y42_EXTRACTED_AT
             data_type: TIMESTAMP_NTZ
           - name: FIRST_NAME
             data_type: TEXT
+            description: First name of the customer
+        description: Table that records customer registrations of the Space Fuel Shop.
+        meta:
+          asset_status: verified
+          tier: tier 1
+          experts:
+            users:
+              - mail-product-support@y42.com
+            teams: []
+    description: Postgres database hosted in Y42-demo-data Google Cloud Project.

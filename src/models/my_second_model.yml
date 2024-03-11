@@ -1,8 +1,0 @@
-version: 2
-
-models:
-  - name: my_second_model
-    description: A tiny model that references another model.
-    config:
-      tags:
-        - example

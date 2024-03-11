@@ -1,0 +1,66 @@
+version: 2
+
+sources:
+  - name: raw_space_fuel_shop
+    config:
+      y42_source:
+        type: source-postgres
+        connection: Postgres Space Fuel Shop
+      y42:
+        apiVersion: v3
+    meta:
+      experts:
+        users:
+          - rob.dewit@y42.com
+    tables:
+      - name: public_payments
+        config:
+          y42_table:
+            import: payments
+            columns:
+              - payment_status
+              - amount_total
+              - id
+              - order_id
+              - payment_method
+            group: public
+            supported_sync_modes:
+              - full_refresh
+              - incremental
+            default_cursor_field: []
+            source_defined_primary_key:
+              - - id
+      - name: public_orders
+        config:
+          y42_table:
+            import: orders
+            columns:
+              - service_station
+              - updated_at
+              - fulfillment_method
+              - id
+              - line_items
+              - customer_id
+              - status
+            group: public
+            supported_sync_modes:
+              - full_refresh
+              - incremental
+            default_cursor_field: []
+            source_defined_primary_key:
+              - - id
+      - name: public_customers
+        config:
+          y42_table:
+            import: customers
+            columns:
+              - last_name
+              - id
+              - first_name
+            group: public
+            supported_sync_modes:
+              - full_refresh
+              - incremental
+            default_cursor_field: []
+            source_defined_primary_key:
+              - - id

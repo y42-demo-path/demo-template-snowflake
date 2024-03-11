@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: my_first_model
+    description: "A tiny model that generates 3 rows of sample data. "
+    config:
+      tags:
+        - example

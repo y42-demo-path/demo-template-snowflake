@@ -13,3 +13,54 @@ sources:
           - rob.dewit@y42.com
     tables:
       - name: exoplanets
+        columns:
+          - name: ascendingnode
+            data_type: FLOAT
+          - name: radius
+            data_type: FLOAT
+          - name: discoveryyear
+            data_type: FLOAT
+          - name: system_rightascension
+            data_type: TEXT
+          - name: age
+            data_type: FLOAT
+          - name: hoststar_age
+            data_type: FLOAT
+          - name: discoverymethod
+            data_type: TEXT
+          - name: binaryflag
+            data_type: NUMBER
+          - name: temperature
+            data_type: FLOAT
+          - name: system_declination
+            data_type: TEXT
+          - name: lastupdate
+            data_type: TEXT
+          - name: period
+            data_type: FLOAT
+          - name: hoststar_metallicity
+            data_type: FLOAT
+          - name: mass
+            data_type: FLOAT
+          - name: longitude
+            data_type: FLOAT
+          - name: periastron
+            data_type: FLOAT
+          - name: semimajoraxis
+            data_type: FLOAT
+          - name: hoststar_temperature
+            data_type: FLOAT
+          - name: list
+            data_type: TEXT
+          - name: eccentricity
+            data_type: FLOAT
+          - name: inclination
+            data_type: FLOAT
+          - name: system_distance
+            data_type: FLOAT
+          - name: name
+            data_type: TEXT
+          - name: hoststar_mass
+            data_type: FLOAT
+          - name: hoststar_radius
+            data_type: FLOAT

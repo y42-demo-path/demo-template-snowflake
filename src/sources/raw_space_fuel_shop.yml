@@ -30,6 +30,19 @@ sources:
             default_cursor_field: []
             source_defined_primary_key:
               - - id
+        columns:
+          - name: ID
+            data_type: TEXT
+          - name: _Y42_EXTRACTED_AT
+            data_type: TIMESTAMP_NTZ
+          - name: ORDER_ID
+            data_type: TEXT
+          - name: PAYMENT_STATUS
+            data_type: TEXT
+          - name: AMOUNT_TOTAL
+            data_type: NUMBER
+          - name: PAYMENT_METHOD
+            data_type: TEXT
       - name: public_orders
         config:
           y42_table:
@@ -49,6 +62,23 @@ sources:
             default_cursor_field: []
             source_defined_primary_key:
               - - id
+        columns:
+          - name: FULFILLMENT_METHOD
+            data_type: TEXT
+          - name: UPDATED_AT
+            data_type: TIMESTAMP_NTZ
+          - name: CUSTOMER_ID
+            data_type: TEXT
+          - name: SERVICE_STATION
+            data_type: TEXT
+          - name: STATUS
+            data_type: TEXT
+          - name: _Y42_EXTRACTED_AT
+            data_type: TIMESTAMP_NTZ
+          - name: ID
+            data_type: TEXT
+          - name: LINE_ITEMS
+            data_type: TEXT
       - name: public_customers
         config:
           y42_table:
@@ -64,3 +94,12 @@ sources:
             default_cursor_field: []
             source_defined_primary_key:
               - - id
+        columns:
+          - name: LAST_NAME
+            data_type: TEXT
+          - name: ID
+            data_type: TEXT
+          - name: _Y42_EXTRACTED_AT
+            data_type: TIMESTAMP_NTZ
+          - name: FIRST_NAME
+            data_type: TEXT

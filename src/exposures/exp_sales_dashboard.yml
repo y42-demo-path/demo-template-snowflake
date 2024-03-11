@@ -1,0 +1,25 @@
+version: 2
+
+exposures:
+  - name: exp_sales_dashboard
+    depends_on:
+      - ref('mrt_completed_orders')
+      - ref('mrt_revenue_by_payment_method')
+    owner:
+      name: Rob de Wit
+      email: rob.dewit@y42.com
+    type: dashboard
+    config:
+      y42:
+        apiVersion: v1
+    meta:
+      experts:
+        users:
+          - mail-product-support@y42.com
+        teams: []
+      asset_status: verified
+      tier: tier 2
+    maturity: medium
+    url: null
+    description: "Data exposed to the sales dashboard to show revenue per day and an
+      overview of completed orders."

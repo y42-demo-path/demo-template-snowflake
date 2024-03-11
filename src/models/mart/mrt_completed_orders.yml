@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: mrt_completed_orders
+    meta:
+      experts:
+        users:
+          - rob.dewit@y42.com
+    config:
+      y42:
+        apiVersion: v1

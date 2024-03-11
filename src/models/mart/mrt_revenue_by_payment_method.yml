@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: mrt_revenue_by_payment_method
+    meta:
+      experts:
+        users:
+          - rob.dewit@y42.com
+    config:
+      y42:
+        apiVersion: v1

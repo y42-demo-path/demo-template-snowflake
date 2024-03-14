@@ -10,9 +10,103 @@ sources:
     meta:
       experts:
         users:
-          - rob.dewit@y42.com
+          - mail-product-support@y42.com
+        teams: []
+      asset_status: verified
+      tier: tier 3
     tables:
       - name: exoplanets
+        description: Dataset containing all discovered exoplanets (planets outside of
+          our solar system) as published by the Open Exoplanet Catalogue. Field
+          descriptions from
+          https://github.com/OpenExoplanetCatalogue/oec_tables/blob/master/FIELDS.md
+        meta:
+          asset_status: verified
+          tier: tier 3
+          experts:
+            users:
+              - mail-product-support@y42.com
+            teams: []
+        columns:
+          - name: ascendingnode
+            data_type: FLOAT
+            description: Ascending node \[degree\]
+          - name: system_declination
+            data_type: TEXT
+            description: Declination \[+/-dd mm ss\]
+          - name: eccentricity
+            data_type: FLOAT
+            description: Eccentricity
+          - name: list
+            data_type: TEXT
+            description: A list of lists the planet is on
+          - name: temperature
+            data_type: FLOAT
+            description: Surface or equilibrium temperature \[K\]
+          - name: discoverymethod
+            data_type: TEXT
+            description: Discovery method
+          - name: periastron
+            data_type: FLOAT
+            description: Periastron \[degree\]
+          - name: longitude
+            data_type: FLOAT
+            description: Longitude \[degree\]
+          - name: lastupdate
+            data_type: TEXT
+            description: Last updated \[yy/mm/dd\]
+          - name: hoststar_mass
+            data_type: FLOAT
+            description: Host star mass \[Solar masses\]
+          - name: discoveryyear
+            data_type: FLOAT
+            description: Discovery year \[yyyy\]
+          - name: inclination
+            data_type: FLOAT
+            description: Inclination \[degree\]
+          - name: hoststar_temperature
+            data_type: FLOAT
+            description: Host star temperature \[K\]
+          - name: mass
+            data_type: FLOAT
+            description: Planetary mass \[Jupiter masses\]
+          - name: system_rightascension
+            data_type: TEXT
+            description: Right ascension \[hh mm ss\]
+          - name: hoststar_age
+            data_type: FLOAT
+            description: Host star age \[Gyr\]
+          - name: semimajoraxis
+            data_type: FLOAT
+            description: Semi-major axis \[Astronomical Units\]
+          - name: age
+            data_type: FLOAT
+            description: Age \[Gyr\]
+          - name: radius
+            data_type: FLOAT
+            description: Radius \[Jupiter radii\]
+          - name: hoststar_radius
+            data_type: FLOAT
+            description: Host star radius \[Solar radii\]
+          - name: name
+            data_type: TEXT
+            description: Primary identifier of planet
+            tests:
+              - not_null
+              - unique
+          - name: hoststar_metallicity
+            data_type: FLOAT
+            description: Host star metallicity \[log relative to solar\]
+          - name: system_distance
+            data_type: FLOAT
+            description: Distance from Sun \[parsec\]
+          - name: period
+            data_type: FLOAT
+            description: Period \[days\]
+          - name: binaryflag
+            data_type: NUMBER
+            description: Binary flag \[0=no known stellar binary companion; 1=P-type binary
+              (circumbinary); 2=S-type binary; 3=orphan planet (no star)\]
     description: "CSV dataset from the Open Exoplanet Catalogue. Source points to
       most recent dataset version on \\`main\\` branch of
       `https://github.com/OpenExoplanetCatalogue/open_exoplanet_catalogue/`"

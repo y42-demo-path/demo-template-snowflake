@@ -5,7 +5,10 @@ models:
     meta:
       experts:
         users:
-          - rob.dewit@y42.com
+          - mail-product-support@y42.com
+        teams: []
+      asset_status: verified
+      tier: tier 3
     config:
       y42:
         apiVersion: v1

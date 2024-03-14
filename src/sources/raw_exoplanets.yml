@@ -13,3 +13,6 @@ sources:
           - rob.dewit@y42.com
     tables:
       - name: exoplanets
+    description: "CSV dataset from the Open Exoplanet Catalogue. Source points to
+      most recent dataset version on \\`main\\` branch of
+      `https://github.com/OpenExoplanetCatalogue/open_exoplanet_catalogue/`"

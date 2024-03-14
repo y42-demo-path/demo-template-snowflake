@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw_exoplanets
+    config:
+      y42_source:
+        type: python-ingest
+      y42:
+        apiVersion: v3
+    meta:
+      experts:
+        users:
+          - rob.dewit@y42.com
+    tables:
+      - name: exoplanets

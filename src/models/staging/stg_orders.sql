@@ -6,13 +6,13 @@ source AS (
 
 renamed AS (
     SELECT
-        ID AS order_id,
-        CUSTOMER_ID AS customer_id,
-        FULFILLMENT_METHOD AS fulfillment_method,
-        LINE_ITEMS AS line_items,
-        SERVICE_STATION AS service_station,
-        STATUS AS order_status,
-        UPDATED_AT AS order_received
+        "ID" AS order_id,
+        "CUSTOMER_ID" AS customer_id,
+        "FULFILLMENT_METHOD" AS fulfillment_method,
+        "LINE_ITEMS" AS line_items,
+        "SERVICE_STATION" AS service_station,
+        "STATUS" AS order_status,
+        "UPDATED_AT" AS order_received
     FROM source
 )
 

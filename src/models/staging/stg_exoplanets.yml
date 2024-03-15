@@ -13,17 +13,11 @@ models:
       y42:
         apiVersion: v1
     columns:
-      - name: exoplanet_name
-        data_type: TEXT
-      - name: binary_flag
-        data_type: NUMBER
       - name: mass
         data_type: FLOAT
       - name: radius
         data_type: FLOAT
       - name: period
-        data_type: FLOAT
-      - name: semi_major_axis
         data_type: FLOAT
       - name: eccentricity
         data_type: FLOAT
@@ -31,22 +25,12 @@ models:
         data_type: FLOAT
       - name: longitude
         data_type: FLOAT
-      - name: ascending_node
-        data_type: FLOAT
       - name: inclination
         data_type: FLOAT
       - name: temperature
         data_type: FLOAT
       - name: age
         data_type: FLOAT
-      - name: discovery_method
-        data_type: TEXT
-      - name: discovery_year
-        data_type: FLOAT
-      - name: last_update
-        data_type: TEXT
-      - name: system_right_ascension
-        data_type: TEXT
       - name: system_declination
         data_type: TEXT
       - name: system_distance
@@ -61,5 +45,21 @@ models:
         data_type: FLOAT
       - name: hoststar_age
         data_type: FLOAT
+      - name: binary_flag
+        data_type: NUMBER
+      - name: exoplanet_name
+        data_type: TEXT
+      - name: semi_major_axis
+        data_type: FLOAT
+      - name: ascending_node
+        data_type: FLOAT
+      - name: discovery_method
+        data_type: TEXT
+      - name: discovery_year
+        data_type: FLOAT
+      - name: system_right_ascension
+        data_type: TEXT
+      - name: last_updated
+        data_type: TEXT
       - name: parent_lists
         data_type: TEXT

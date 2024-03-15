@@ -30,7 +30,7 @@ renamed AS (
 		"hoststar_metallicity",
 		"hoststar_temperature",
 		"hoststar_age",
-		"list" AS parent_lists
+		"list" AS "parent_lists"
 	FROM source
 )
 

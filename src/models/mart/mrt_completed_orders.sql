@@ -10,6 +10,10 @@ stg_customers AS (
 
 stg_payments AS (
 	SELECT * FROM {{ ref('stg_payments') }}
+),
+
+stg_exoplanets AS (
+	SELECT * FROM {{ ref('stg_exoplanets') }}
 )
 
 
@@ -20,6 +24,7 @@ SELECT
 	pay.amount_total,
 	ord.fulfillment_method,
 	ord.service_station,
+	exo.system_distance AS distance,
 	pay.payment_id,
 	pay.payment_method,
 	cus.customer_id,
@@ -34,6 +39,9 @@ LEFT JOIN stg_customers AS cus
 
 LEFT JOIN stg_payments AS pay
 	ON ord.order_id = pay.order_id
+
+LEFT JOIN stg_exoplanets AS exo
+	ON ord.service_station = exo.exoplanet_name
 
 WHERE
 	TRUE

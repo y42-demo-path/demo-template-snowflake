@@ -91,7 +91,6 @@ sources:
           - name: name
             data_type: TEXT
             description: Primary identifier of planet
-            tests: []
           - name: hoststar_metallicity
             data_type: FLOAT
             description: Host star metallicity \[log relative to solar\]

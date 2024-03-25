@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+  - name: test_action
+    depends_on: []
+    owner:
+      name: Hai Bui
+      email: hai.bui@y42.com
+    type: application
+    config:
+      y42_exposure:
+        type: python-action
+      y42:
+        apiVersion: v1
+    meta:
+      experts:
+        users:
+          - hai.bui@y42.com

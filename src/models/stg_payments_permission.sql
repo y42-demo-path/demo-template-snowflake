@@ -1,5 +1,5 @@
 {{ config(
-  post_hook = "grant select on table {{ this }} to role Y42_DEMO_TEMP"
+  post_hook = "grant select on table DEMO_SPACE_TEMPLATE_BASIC.Y42_DEMO_TEMPLATE_SNOWFLAKE_TEST_PERMISS to role Y42_DEMO_TEMP"
 ) }}
 
 WITH

@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_payments_permission
+    meta:
+      experts:
+        users:
+          - octavian.zarzu@y42.com
+    config:
+      y42:
+        apiVersion: v1

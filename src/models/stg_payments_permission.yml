@@ -9,3 +9,5 @@ models:
     config:
       y42:
         apiVersion: v1
+      y42_table:
+        publish_view: false

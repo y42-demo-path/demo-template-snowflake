@@ -1,5 +1,5 @@
 {{ config(
-  post_hook = "grant select on {{ this }}"
+  post_hook = "grant select on table {{ this }}"
 ) }}
 
 WITH
